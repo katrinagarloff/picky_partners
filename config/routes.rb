@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   post '/sessions', to: "sessions#create"
   delete '/sessions', to: "sessions#destroy", as: 'logout'
 
-  resources :quiz, only: [:new, :create]
-  resources :results, only: [:show]
+  resources :questions
+
 
 end

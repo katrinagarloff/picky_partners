@@ -1,0 +1,10 @@
+<h2>Find Your Perfect Match</h2>
+
+<%= form_for @user do |f|%>
+  <% @questions.each do |question| %><br>
+  <h3><%= question.ask %></h3>
+    <%= f.radio_button "ask[#{question.id}]", ask.answer_1 %>
+    <%= f.radio_button "ask[#{question.id}]", ask.answer_2 %>
+  <% end %>
+  <%= f.submit "Get Your Results!" %>
+<% end %>

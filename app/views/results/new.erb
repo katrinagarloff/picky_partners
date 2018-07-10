@@ -1,0 +1,10 @@
+<h1>Find Your Perfect Project Partner</h1>
+
+<%= form_tag '/results' do %>
+  <% @quizzes.each do |quiz| %><br>
+  <h3><%= quiz.question %></h3>
+    <%= radio_button_tag "quiz[#{quiz.id}]", quiz.answer_1 %>
+    <%= radio_button_tag "quiz[#{quiz.id}]", quiz.answer_2 %>
+  <% end %>
+  <%= submit_tag "Get Your Results!" %>
+<% end %>
