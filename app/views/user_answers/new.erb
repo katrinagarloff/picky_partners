@@ -1,0 +1,11 @@
+<h1>Quizzzzz Time</h1>
+
+<%= form_tag '/user_answers', method: :post %>
+<% Question.all.each do |question| %>
+    <h2><%= question.content %></h2>
+    <% question.answers.each do |answer| %>
+      <%= radio_button_tag "user_answers[question_#{question.id}]",  answer.id %>
+      <%= label_tag answer.id, answer.content %>
+    <% end %>
+<% end %>
+<%= submit_tag %>
