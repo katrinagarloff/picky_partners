@@ -27,6 +27,10 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @potential_matches = current_user.potential_matches
+    @requests = current_user.match_requests
+    @matches = current_user.matches
+
   end
 
   private
