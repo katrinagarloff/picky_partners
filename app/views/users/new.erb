@@ -2,8 +2,8 @@
      <div class="container form-place">
        <h3 style="text-align:center;color: #fff; text-shadow: 1px 1px #000;">New Registration</h3>
         <br>
-        <form class="form-inline form-shift" >
-          <%= form_for @user do |f| %>
+
+          <%= form_for @user do |f|%>
 
           <div class="form-group mb-2 mr-sm-2">
             <% f.label :name %>
@@ -28,7 +28,7 @@
             <%= f.submit "Sign Up!", class:"btn btn-primary" %>
           </div>
           <% end %>
-        </form>
+
       </div>
 
 </div>
