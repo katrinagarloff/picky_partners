@@ -1,6 +1,11 @@
-<h3>Welcome, <%= @user.name %></h3>
+<h1>Matches for <%= @user.name %>: </h1>
 
-<p> Here are your quiz results: </p>
-<% @user.answers.each do |answer| %>
-<%= answer.content %><br/>
-<% end %>
+  <% if @user.answers.empty? %>
+    <%= link_to "Get Your Matches!", new_user_answer_path %>
+    <% else %>
+      <% @user.answers.each do |answer| %>
+      <p><%= answer.content %><br/></p>
+    <% end %>
+    <h3>Want to try again?</h3>
+    <%= link_to "Find New Partners!", new_user_answer_path %>
+  <% end %>
