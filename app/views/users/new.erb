@@ -1,27 +1,34 @@
-<h3>New Registration</h3>
+<div class="jumbotron registration-banner">
+     <div class="container form-place">
+       <h3 style="text-align:center;color: #fff; text-shadow: 1px 1px #000;">New Registration</h3>
+        <br>
+        <form class="form-inline form-shift" >
+          <%= form_for @user do |f| %>
 
-<%= form_for @user do |f| %>
+          <div class="form-group mb-2 mr-sm-2">
+            <% f.label :name %>
+            <%= f.text_field :name, class:"form-control", placeholder:"Name" %>
+          </div>
 
-<div class="form-group">
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+          <div class="form-group mb-2 mr-sm-2">
+            <% f.label :username %>
+            <%= f.text_field :username, class:"form-control", placeholder:"Username" %>
+          </div>
+
+          <div class="form-group mb-2 mr-sm-2">
+            <% f.label :password %>
+            <%= f.password_field :password, class:"form-control", placeholder:"Password" %>
+          </div>
+
+          <div class="form-group mb-2 mr-sm-2">
+            <% f.label :password_confirmation %>
+            <%= f.password_field :password_confirmation, class:"form-control", placeholder:"Confirm Password"%>
+          </div>
+          <div class="form-group mb-2 mr-sm-2">
+            <%= f.submit "Sign Up!", class:"btn btn-primary" %>
+          </div>
+          <% end %>
+        </form>
+      </div>
+
 </div>
-
-<div class="form-group">
-  <%= f.label :username %>
-  <%= f.text_field :username %>
-</div>
-
-<div class="form-group">
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-</div>
-
-<div class="form-group">
-  <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation %>
-</div>
-
-  <%= f.submit "Sign Up!" %>
-
-<% end %>

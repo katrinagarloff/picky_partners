@@ -14,11 +14,50 @@
  *= require_self
  */
 
+h1, h2, h3, h4, h5, h6 {
+ font-family: 'Merriweather', serif;
+ font-weight: 700;
+}
+
+p {
+  font-family: 'Muli', sans-serif;
+}
+
+a {
+  color: #698275;
+}
+
+.btn-primary {
+  background-color: #698275;
+  border-color: #698275;
+}
+
  .jumbotron {
    height: 100vh;
  }
 
  .banner {
-   background-image: url('/images/welcome.jpg');
-   height: 100vh;
+   background: url('/welcome.jpg') no-repeat center center;
+   background-size: cover;
  }
+
+ .registration-banner {
+   background: url('/registration.jpg') no-repeat center center;
+   background-size: cover;
+ }
+
+ .custom-bg {
+   width: 300px;
+   padding: 30px 10px 15px 10px;
+   background-color: #E9EBE9;
+ }
+
+.form-shift {
+  position: relative;
+  left: 80px;
+}
+
+.form-place {
+  position: relative;
+  top: 150px;
+}
