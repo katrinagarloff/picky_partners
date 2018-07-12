@@ -5,7 +5,6 @@ class UserAnswersController < ApplicationController
   end
 
   def create
-    # user = User.where(id: session[:user_id])
     UserAnswer.where(user_id: session[:user_id]).destroy_all
     @user_answer1 = UserAnswer.create(user_id: session[:user_id], answer_id: answer_params[:question_1])
     @user_answer2 = UserAnswer.create(user_id: session[:user_id], answer_id: answer_params[:question_2])

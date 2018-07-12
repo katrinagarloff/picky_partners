@@ -6,6 +6,7 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
+    render :layout => "registration"
   end
 
   def create
@@ -14,7 +15,6 @@ class UsersController < ApplicationController
       @user.save
       session[:user_id] = @user.id
       redirect_to @user
-
     else
       render :new
     end
