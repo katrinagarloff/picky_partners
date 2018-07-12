@@ -13,6 +13,7 @@ class UserAnswersController < ApplicationController
     @user_answer4 = UserAnswer.create(user_id: session[:user_id], answer_id: answer_params[:question_4])
     @user_answer5 = UserAnswer.create(user_id: session[:user_id], answer_id: answer_params[:question_5])
     @user_answer6 = UserAnswer.create(user_id: session[:user_id], answer_id: answer_params[:question_6])
+    byebug
     redirect_to user_path(current_user)
   end
 
