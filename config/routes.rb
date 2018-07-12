@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   resources :users
   resources :user_answers
 
+  resources :matches
+  resources :potential_matches 
 end

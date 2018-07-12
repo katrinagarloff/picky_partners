@@ -1,5 +1,8 @@
 class User < ApplicationRecord
   has_secure_password
+  has_many :matches
+  has_many :match_requests
+  has_many :potential_matches
   has_many :user_answers
   has_many :answers, through: :user_answers
 
@@ -46,21 +49,38 @@ class User < ApplicationRecord
 
       if answer.category == "C" && answer.id % 2 != 0
         comp += 1
-        if answer.category == "S" && answer.id % 2 != 0
+      elsif answer.category == "S" && answer.id % 2 != 0
           stress += 1
-          if answer.category == "L" && answer.id % 2 != 0
+        elsif answer.category == "L" && answer.id % 2 != 0
             leadership += 1
-          end
-        end
       end
     end
+
     if comp > 1
-      category_string += "You find a competive atmosphere motivating!"
+      category_string += "You find a competive atmosphere motivating! "
     elsif comp < 1
-      category_string += "You enjoy working in a collaborative atmosphere."
+      category_string += "You enjoy working in a highly collaborative atmosphere. "
     else
-      category_string += "You "
+      category_string += "You like working with dynamic individuals who help each other to be better. "
     end
+
+    if leadership > 1
+      category_string += "In groups you often take on a leadership role. "
+    elsif leadership < 1
+      category_string += "You work well in groups, supporting an idea to fruition. "
+    else
+      category_string += "In group projects you have a good balance of advocating for your own ideas and supporting others. "
+    end
+
+    if stress > 1
+      category_string += "You thrive in high-intensity environments. "
+    elsif stress < 1
+      category_string += "You work best in a calm work environment. "
+    else
+      category_string += "You need some variety in your worklife to keep you interested. "
+    end
+
+    category_string
   end
 
 
