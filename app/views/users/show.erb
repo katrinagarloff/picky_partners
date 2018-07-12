@@ -3,8 +3,8 @@
   <% if @user.answers.empty? %>
     <%= link_to "Get Your Matches!", new_user_answer_path %>
     <% else %>
-      <% @user.answers.each do |answer| %>
-      <p><%= answer.content %><br/></p>
+      <% @matches.each do |match| %>
+      <p><%= match.name %><br/></p>
     <% end %>
     <h3>Want to try again?</h3>
     <%= link_to "Find New Partners!", new_user_answer_path %>
