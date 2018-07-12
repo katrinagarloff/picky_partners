@@ -1,9 +1,11 @@
 class UserAnswersController < ApplicationController
+
   def new
     @user_answer = UserAnswer.new
   end
 
   def create
+    # user = User.where(id: session[:user_id])
     UserAnswer.where(user_id: session[:user_id]).destroy_all
     @user_answer1 = UserAnswer.create(user_id: session[:user_id], answer_id: answer_params[:question_1])
     @user_answer2 = UserAnswer.create(user_id: session[:user_id], answer_id: answer_params[:question_2])
@@ -11,6 +13,7 @@ class UserAnswersController < ApplicationController
     @user_answer4 = UserAnswer.create(user_id: session[:user_id], answer_id: answer_params[:question_4])
     @user_answer5 = UserAnswer.create(user_id: session[:user_id], answer_id: answer_params[:question_5])
     @user_answer6 = UserAnswer.create(user_id: session[:user_id], answer_id: answer_params[:question_6])
+    redirect_to user_path(current_user)
   end
 
 
