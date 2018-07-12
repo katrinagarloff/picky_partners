@@ -13,3 +13,12 @@
  *= require_tree .
  *= require_self
  */
+
+ .jumbotron {
+   height: 100vh;
+ }
+
+ .banner {
+   background-image: url('/images/welcome.jpg');
+   height: 100vh;
+ }
