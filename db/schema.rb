@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_11_163952) do
+ActiveRecord::Schema.define(version: 2018_07_12_180002) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,7 +23,21 @@ ActiveRecord::Schema.define(version: 2018_07_11_163952) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "match_requests", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "user2_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "matches", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "user2_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "potential_matches", force: :cascade do |t|
     t.integer "user_id"
     t.integer "user2_id"
     t.datetime "created_at", null: false

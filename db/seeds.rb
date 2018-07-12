@@ -29,10 +29,3 @@ Answer.create(content: "You’ve been waiting for this kind of opportunity.", qu
 
 Answer.create(content: "Find a new party to go and text your friends the new location.", question_id: qt_6.id, category: "L")
 Answer.create(content: "Wait until your friend is ready to go.", question_id: qt_6.id, category: "L")
-
-# User.create(name: "odd questions 1", username: "k_odd", password_digest: "1" )
-# User.create(name: "even questions 1", username: "k_even", password_digest: "1")
-# User.create(name: "odd questions 2", username: "t_odd", password_digest: "1")
-# User.create(name: "even questions 2", username: "t_even", password_digest: "1")
-# User.create(name: "first 4 odd, last 2 even", username: "odd_mix", password_digest: "1")
-# User.create(name: "first 4 even, last 2 odd", username: "even_mix", password_digest: "1")

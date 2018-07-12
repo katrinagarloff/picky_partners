@@ -1,12 +1,31 @@
-<h1>Matches for <%= @user.name %>: </h1>
+<h1> <%= @user.name %>: </h1>
 
   <% if @user.answers.empty? %>
     <%= link_to "Get Your Matches!", new_user_answer_path %>
     <% else %>
       <%= @user.show_categories %>
-      <% @matches.each do |match| %>
-      <p><%= link_to match.name, user_path(match) %><br/></p>
+
+      <h1>Accept requests: </h1>
+      <% @requests.each do |request| %>
+      <% your_request = User.find(request.user2_id) %>
+      <%= link_to your_request.name, match_path(request.id) %>
+      <br/>
+      <% end %>
+
+      <h1>Send a request: </h1>
+      <% @potential_matches.each do |match| %>
+      <p><% your_match = User.find(match.user2_id)%></p>
+        <%= link_to your_match.name, potential_match_path(match.id)%>
+        <br/>
     <% end %>
+
+    <h1>Matches made: </h1>
+    <% @matches.each do |match| %>
+    <% your_match = User.find(match.user2_id) %>
+    <%= your_match.name %>
+    <br/>
+    <% end %>
+
     <h3>Want to try again?</h3>
     <%= link_to "Find New Partners!", new_user_answer_path %>
   <% end %>

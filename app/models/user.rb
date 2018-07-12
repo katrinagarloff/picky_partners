@@ -33,6 +33,8 @@ class User < ApplicationRecord
       #   end #next self_answer
       # end #next user_answer
       if counter >= 4 && !my_matches.include?(user) && user.id != self.id
+        new_potential_match = PotentialMatch.create(user_id: self.id, user2_id: user.id)
+        new_potential_match = PotentialMatch.create(user_id: user.id, user2_id: self.id)
         my_matches << user
       end #end if
     end #next user
