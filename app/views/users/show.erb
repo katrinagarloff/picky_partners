@@ -23,8 +23,10 @@
             <h6>Send a request: </h6>
               <% @potential_matches.each do |match| %>
                 <% your_match = User.find(match.user2_id)%>
+
                 <div class="btn btn-special">
                 <%= link_to your_match.name, redirect_user_path(match.id), id: 'link-to-text-color'%>
+                <p><%= your_match.mod %></p>
                 <br/>
               </div>
             <% end %>
@@ -38,7 +40,7 @@
         <% your_request = User.find(request.user2_id) %>
         <div class="btn btn-special">
         <%= link_to your_request.name, redirect_match_path(request.id)%>
-        </div>
+        <p><%= your_request.mod %></p>
         <br/>
         <% end %>
     </div>
@@ -51,11 +53,12 @@
     <br>
       <% @matches.each do |match| %>
       <% your_match = User.find(match.user2_id) %>
-      <div class="btn-matches">
-      <p><%= your_match.name %></p>
-      </div>
+        <div class="btn-matches">
+          <p><%= your_match.name %></p>
+          <p><%= your_match.mod %></p>
+          <br>
+        </div>
       <% end %>
-
   <% end %>
 
   </div>

@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   validates :username, uniqueness: true, presence: true
   validates :name, presence: true
+  validates :mod, presence: true
 
   has_secure_password
   has_many :matches

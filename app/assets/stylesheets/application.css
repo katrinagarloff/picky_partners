@@ -75,7 +75,13 @@ a {
    background-color: #E9EBE9;
  }
 
+
 /* Centers form on login page.*/
+ .custom-select {
+  width: 50%;
+  position: relative;
+  left: 275px;
+ }
 .form-place {
   position: relative;
   top: 125px;
