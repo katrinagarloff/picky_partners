@@ -4,7 +4,7 @@
 
   <h3> <%= @user.name %>'s Work Personality</h3>
   <% if @user.answers.empty? %>
-  <p> You don't have any potential project partners! Take the quiz to find out who would work best with you!</p>
+  <p id="about-you"> You don't have any potential project partners! Take the quiz to find out who would work best with you!</p>
     <%= link_to "Get Your Matches!", new_user_answer_path %>
     <br>
     <% else %>
@@ -37,7 +37,7 @@
         <% @requests.each do |request| %>
         <% your_request = User.find(request.user2_id) %>
         <div class="btn btn-special">
-        <p><%= link_to your_request.name, redirect_match_path(request.id)%></p>
+        <%= link_to your_request.name, redirect_match_path(request.id)%>
         </div>
         <br/>
         <% end %>
@@ -45,7 +45,7 @@
   </div>
 </div>
 <br>
-  <div class="jumbotron profile-jumbotron officalp-banner align-content-center">
+  <div class="jumbotron profile-jumbotron officalp-banner">
 
     <h3>Your Official Partners </h3>
     <br>

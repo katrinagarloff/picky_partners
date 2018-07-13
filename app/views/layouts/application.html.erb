@@ -11,15 +11,30 @@
 </head>
 
 <body>
-  <nav class="pt-2">
-    <ul>
+    <ul class="nav pt-3 ml-3 pb-2">
+      <li class="nav-item">
       <% if logged_in? %>
-      <p>Welcome, <%= current_user.name %>! || <%= link_to "Logout", logout_path, method: 'delete' %></p>
+      <p>Welcome, <%= current_user.name %>!</p>
       <% else %>
-      <%= link_to "Login", login_path %>
+      <%= link_to "Login", root_path %>
       <% end %>
+      </li>
+      <li class="nav-item ml-4">
+        <% if logged_in? %>
+        <p><%= link_to "Take Quiz", new_user_answer_path %></p>
+        <% end %>
+      </li>
+      <li class="nav-item ml-4">
+        <% if logged_in? %>
+        <p><%= link_to "My Profile", user_path(current_user) %></p>
+        <% end %>
+      </li>
+      <li class="nav-item ml-4">
+        <% if logged_in? %>
+          <p><%= link_to "Logout", logout_path, method: 'delete' %></p>
+        <% end %>
+      </li>
     </ul>
-  </nav>
 
   <%= yield %>
 

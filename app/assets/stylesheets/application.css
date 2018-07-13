@@ -23,10 +23,12 @@ p {
   font-family: 'Muli', sans-serif;
 }
 
+/* Makes all links green. */
 a {
   color: #698275;
 }
 
+/* Makes button text color white */
 .btn > a {
   color: #fff;
 }
@@ -40,20 +42,24 @@ a {
    height: 100vh;
  }
 
+/* Makes profile header half the size of the viewport */
  .profile-jumbotron {
    height: 50vh;
  }
 
+/*Adds background image to Welcome page*/
  .banner {
    background: url('/welcome.jpg') no-repeat center center;
    background-size: cover;
  }
 
+/*Adds background image to Registration page*/
  .registration-banner {
    background: url('/registration.jpg') no-repeat center center;
    background-size: cover;
  }
 
+/*Adds background image to Profile header*/
  .profile-banner {
    background: url('/profile-header.jpg') no-repeat bottom center;
    background-size: cover;
@@ -63,37 +69,40 @@ a {
    /* background-color: #A4CCC0; */
  }
 
- .potential-banner {
-   background: url('/potential.jpg') no-repeat bottom center;
-   background-size: cover;
- }
-
- .accepted-banner {
-   background: url('/accepted.jpg') no-repeat bottom center;
-   background-size: cover;
- }
-
  .custom-bg {
    width: 300px;
    padding: 30px 10px 15px 25px;
    background-color: #E9EBE9;
  }
 
+/* Centers form on login page.*/
 .form-place {
   position: relative;
   top: 125px;
 }
 
+
+/* Centers form on registration page.*/
 .form-control {
   width: 50%;
   position: relative;
   left: 275px;
 }
-
+/* Centers submit button on registration page.*/
 #new_user_button {
   position: relative;
   left: 275px;
 }
+
+/* Centers registration error messages. */
+
+.alert {
+  width: 50%;
+  height: 75%;
+  position: relative;
+  left: 275px;
+}
+
 
 .bg-green {
   color: #A4CCC0
@@ -127,7 +136,7 @@ a {
   color: #fff;
   font-weight: 400;
   border: 1px solid transparent;
-  padding-top: 10px;
+  padding-top: 11px;
   padding-left: 20px;
   padding-right: 20px;
   border-radius: .25rem;

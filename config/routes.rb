@@ -6,8 +6,9 @@
   delete '/logout', to: "sessions#destroy", as: 'logout'
   get '/potential_matches/:id', to: "potential_matches#redirect", as: "redirect_user"
   get '/matches/:id', to: "matches#redirect", as: "redirect_match"
+  get '/users', to: "sessions#new"
 
-  resources :users
+  resources :users, except: :index
   resources :user_answers
 
   resources :matches
