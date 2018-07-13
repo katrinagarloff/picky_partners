@@ -1,6 +1,7 @@
-<div class="jumbotron potential-banner">
-  <h5 style="text-align:center; color: #fff;line-height:1.5;">Congratulations! You've requested to partner with <%= @user.name %>!<br/>
+<div class="jumbotron accepted-banner">
+  <h5 style="text-align:center; color: #fff;line-height:1.5;text-shadow: 1px 1px #000;">Congratulations! You've requested to partner with <%= @user.name %>!<br/>
     Hold Tight! We're just waiting on their reply.</h5>
-
-  <p style="text-align:center;"> <%= link_to "Back", user_path(current_user) %></p>
+   <div class="btn btn-special btn-placement">
+      <%= link_to "Back to Profile", user_path(current_user) %>
+   </div>
 </div>

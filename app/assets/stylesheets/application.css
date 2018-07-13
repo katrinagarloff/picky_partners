@@ -17,7 +17,6 @@
 h1, h2, h3, h4, h5, h6 {
  font-family: 'Merriweather', serif;
  font-weight: 700;
- color: #333;
 }
 
 p {
@@ -26,6 +25,10 @@ p {
 
 a {
   color: #698275;
+}
+
+.btn > a {
+  color: #fff;
 }
 
 .btn-primary {
@@ -65,6 +68,11 @@ a {
    background-size: cover;
  }
 
+ .accepted-banner {
+   background: url('/accepted.jpg') no-repeat bottom center;
+   background-size: cover;
+ }
+
  .custom-bg {
    width: 300px;
    padding: 30px 10px 15px 25px;
@@ -92,10 +100,11 @@ a {
 }
 
 /* <p class="btn-special" id="special-link"> on profile page */
+
 .btn-special {
     display: inline-block;
     background-color: #698275;
-    color: #fff!important;
+    color: #fff;
     font-weight: 400;
     text-align: center;
     white-space: nowrap;
@@ -112,6 +121,23 @@ a {
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
-#special-link {
+.btn-matches {
+  display: inline-block;
+  background-color: #698275;
+  color: #fff;
+  font-weight: 400;
+  border: 1px solid transparent;
+  padding-top: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: .25rem;
+}
+
+div.btn-placement {
+  position: absolute;
+  bottom: 275px;
+}
+
+.special-link {
   color: #fff!important;
 }

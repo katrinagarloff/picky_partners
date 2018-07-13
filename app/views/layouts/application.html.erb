@@ -11,7 +11,7 @@
 </head>
 
 <body>
-  <nav>
+  <nav class="pt-2">
     <ul>
       <% if logged_in? %>
       <p>Welcome, <%= current_user.name %>! || <%= link_to "Logout", logout_path, method: 'delete' %></p>

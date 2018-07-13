@@ -1,2 +1,7 @@
-<h3> Congratulations! You've made a new project partner match with
-<%= @partner.name %> </h3>
+<div class="jumbotron potential-banner">
+  <h5 style="text-align:center; color: #fff;line-height:1.5;"> Congratulations! You've made a new project partner match with
+    <%= @partner.name %> </h5>
+    <div class="btn btn-special">
+      <p style="text-align:center;"><%= link_to "Back to Profile", user_path(current_user) %></p>
+    </div>
+</div>
