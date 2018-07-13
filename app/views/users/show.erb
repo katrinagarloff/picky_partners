@@ -22,6 +22,10 @@
               <% @potential_matches.each do |match| %>
                 <% your_match = User.find(match.user2_id)%>
                 <p><%= link_to your_match.name, redirect_user_path(match.id)%></p>
+                <!-- Here's a mod -->
+                <br>
+                <p><%= your_match.mod %></p>
+                <!--  end of added mod -->
                 <br/>
             <% end %>
 
@@ -33,6 +37,10 @@
         <% @requests.each do |request| %>
         <% your_request = User.find(request.user2_id) %>
         <p><%= link_to your_request.name, redirect_match_path(request.id)%></p>
+          <!-- Here's a mod -->
+        <br>
+        <p><%= your_request.mod %></p>
+        <!--  end of added mod -->
         <br/>
         <% end %>
     </div>
@@ -45,6 +53,10 @@
       <% @matches.each do |match| %>
       <% your_match = User.find(match.user2_id) %>
       <p><%= your_match.name %></p>
+        <!-- Here's a mod -->
+      <br>
+      <p><%= your_match.mod %></p>
+      <!--  end of added mod -->
       <% end %>
 
   <% end %>
