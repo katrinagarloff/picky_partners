@@ -44,7 +44,8 @@ a {
 
 /* Makes profile header half the size of the viewport */
  .profile-jumbotron {
-   height: 50vh;
+   height: 60vh;
+   margin-bottom: 2rem;
  }
 
 /*Adds background image to Welcome page*/
@@ -94,6 +95,7 @@ a {
   position: relative;
   left: 275px;
 }
+
 /* Centers submit button on registration page.*/
 #new_user_button {
   position: relative;
@@ -101,7 +103,6 @@ a {
 }
 
 /* Centers registration error messages. */
-
 .alert {
   width: 50%;
   height: 75%;
@@ -109,12 +110,12 @@ a {
   left: 275px;
 }
 
-
+/*Gives Potenial Partners headers a green font. */
 .bg-green {
   color: #A4CCC0
 }
 
-/* <p class="btn-special" id="special-link"> on profile page */
+/* Extra styling for buttons */
 
 .btn-special {
     display: inline-block;
@@ -136,23 +137,36 @@ a {
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
+/*Styles the buttons for matches on the profile page. */
 .btn-matches {
   display: inline-block;
   background-color: #698275;
   color: #fff;
   font-weight: 400;
   border: 1px solid transparent;
-  padding-top: 11px;
-  padding-left: 20px;
-  padding-right: 20px;
+  margin-top: 10px;
+  padding-top: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
   border-radius: .25rem;
+
 }
 
-div.btn-placement {
+.about {
+   background: aliceblue;
+   padding: 1rem;
+   opacity: 0.9;
+   border: black solid 1px;
+   width: 50%;
+   border-radius: 3px;
+   margin-bottom: 1rem;
+}
+
+/* div.btn-placement {
   position: absolute;
   bottom: 275px;
-}
+} */
 
-.special-link {
+/* .special-link {
   color: #fff!important;
-}
+} */

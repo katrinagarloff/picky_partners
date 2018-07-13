@@ -4,11 +4,15 @@
 
   <h3> <%= @user.name %>'s Work Personality</h3>
   <% if @user.answers.empty? %>
-  <p id="about-you"> You don't have any potential project partners! Take the quiz to find out who would work best with you!</p>
+   <div class="about">
+    You don't have any potential project partners! Take the quiz to find out who would work best with you!
+  </div>
     <%= link_to "Get Your Matches!", new_user_answer_path %>
     <br>
     <% else %>
+     <div class="about">
       <p><%= @user.show_categories %></p>
+    </div>
       <h5>Want to try again?</h5>
       <div class="btn btn-special">
       <%= link_to "Find New Partners!", new_user_answer_path %>
@@ -25,8 +29,8 @@
                 <% your_match = User.find(match.user2_id)%>
 
                 <div class="btn btn-special">
-                <%= link_to your_match.name, redirect_user_path(match.id), id: 'link-to-text-color'%>
-                <p><%= your_match.mod %></p>
+                <%= link_to your_match.name, redirect_user_path(match.id), id: 'link-to-text-color'%> |
+                <%= link_to your_match.mod, redirect_user_path(match.id) %>
                 <br/>
               </div>
             <% end %>
@@ -39,26 +43,27 @@
         <% @requests.each do |request| %>
         <% your_request = User.find(request.user2_id) %>
         <div class="btn btn-special">
-        <%= link_to your_request.name, redirect_match_path(request.id)%>
-        <p><%= your_request.mod %></p>
+        <%= link_to your_request.name, redirect_match_path(request.id)%> |
+        <%= link_to your_request.mod, redirect_match_path(request.id) %>
         <br/>
         <% end %>
     </div>
   </div>
 </div>
 <br>
-  <div class="jumbotron profile-jumbotron officalp-banner">
-
-    <h3>Your Official Partners </h3>
+  <div class="jumbotron profile-jumbotron">
+      <h3 style="text-align:center;">Your Official Partners </h3>
+  <div class="mx-auto" style="width: 1110px;">
     <br>
       <% @matches.each do |match| %>
       <% your_match = User.find(match.user2_id) %>
         <div class="btn-matches">
           <p><%= your_match.name %></p>
-          <p><%= your_match.mod %></p>
+          <p style="opacity: .5;"><%= your_match.mod %></p>
           <br>
         </div>
       <% end %>
+  </div>
   <% end %>
 
   </div>
