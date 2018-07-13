@@ -1,5 +1,6 @@
-
+<% if @user.id == session[:user_id] %>
 <div class="jumbotron profile-jumbotron profile-banner">
+
 
   <h3> <%= @user.name %>'s Work Personality</h3>
   <% if @user.answers.empty? %>
@@ -20,7 +21,7 @@
             <h6>Send a request: </h6>
               <% @potential_matches.each do |match| %>
                 <% your_match = User.find(match.user2_id)%>
-                <p><%= link_to your_match.name, potential_match_path(match.id)%></p>
+                <p><%= link_to your_match.name, redirect_user_path(match.id)%></p>
                 <br/>
             <% end %>
 
@@ -49,3 +50,6 @@
   <% end %>
 
   </div>
+<% else %>
+<p> test </p>
+<% end %>
