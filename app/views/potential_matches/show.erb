@@ -1,4 +1,6 @@
-<h5>Congratulations! You've requested to partner with <%= @user.name %>.<br/>
-  Just waiting on their reply.</h5>
+<div class="jumbotron potential-banner">
+  <h5 style="text-align:center; color: #fff;">Congratulations! You've requested to partner with <%= @user.name %>!<br/>
+    Hold Tight! We're just waiting on their reply.</h5>
 
-<%= link_to "Back", user_path(current_user) %>
+  <p style="text-align:center;"> <%= link_to "Back", user_path(current_user) %></p>
+</div>

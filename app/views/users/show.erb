@@ -1,5 +1,5 @@
 
-<div class="jumbotron profile-jumbotron">
+<div class="jumbotron profile-jumbotron profile-banner">
 
   <h3> <%= @user.name %>'s Work Personality</h3>
   <% if @user.answers.empty? %>
@@ -7,11 +7,13 @@
     <%= link_to "Get Your Matches!", new_user_answer_path %>
     <br>
     <% else %>
-      <%= @user.show_categories %>
+      <p><%= @user.show_categories %></p>
+      <h5>Want to try again?</h5>
+      <%= link_to "Find New Partners!", new_user_answer_path %>
 
 </div>
 
-<div class="container">
+<div class="container bg-green">
   <div class="row">
     <div class="col">
       <h3> Potential Project Partners </h3>
@@ -36,7 +38,7 @@
   </div>
 </div>
 <br>
-  <div class="jumbotron profile-jumbotron">
+  <div class="jumbotron profile-jumbotron officalp-banner">
 
     <h3>Your Official Partners </h3>
       <% @matches.each do |match| %>
@@ -44,8 +46,6 @@
       <p><%= your_match.name %></p>
       <% end %>
 
-    <h5>Want to try again?</h5>
-    <%= link_to "Find New Partners!", new_user_answer_path %>
   <% end %>
 
   </div>

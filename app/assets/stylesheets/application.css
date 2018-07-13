@@ -50,6 +50,20 @@ a {
    background-size: cover;
  }
 
+ .profile-banner {
+   background: url('/profile-header.jpg') no-repeat bottom center;
+   background-size: cover;
+ }
+
+ .officalp-banner {
+   /* background-color: #A4CCC0; */
+ }
+
+ .potential-banner {
+   background: url('/potential.jpg') no-repeat bottom center;
+   background-size: cover;
+ }
+
  .custom-bg {
    width: 300px;
    padding: 30px 10px 15px 25px;
@@ -70,4 +84,33 @@ a {
 #new_user_button {
   position: relative;
   left: 275px;
+}
+
+.bg-green {
+  color: #A4CCC0
+}
+
+/* <p class="btn-special" id="special-link"> on profile page */
+.btn-special {
+    display: inline-block;
+    background-color: #698275;
+    color: #fff!important;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+#special-link {
+  color: #fff!important;
 }
