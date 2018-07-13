@@ -27,15 +27,15 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @potential_matches = current_user.potential_matches
-    @requests = current_user.match_requests
-    @matches = current_user.matches
+    @potential_matches = @user.potential_matches
+    @requests = @user.match_requests
+    @matches = @user.matches
 
   end
 
   private
   def user_params
-    params.require(:user).permit(:name, :username, :password, :password_confirmation)
+    params.require(:user).permit(:name, :username, :mod, :password, :password_confirmation)
   end
 
 end

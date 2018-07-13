@@ -1,20 +1,53 @@
-<%= form_for @user do |f| %>
+<div class="jumbotron registration-banner">
+     <div class="container form-place">
+       <h3 style="text-align:center;color: #fff; text-shadow: 1px 1px #000;">New Registration</h3>
+        <br>
 
-  <%= f.label :name %>
-  <%= f.text_field :name %>
 
-  <%= f.label :username %>
-  <%= f.text_field :username %>
 
-  <%= f.label :password %>
-  <%= f.password_field :password %>
+          <% if @user.errors.any? %>
+            <div id="error_explanation">
+              <ul>
+              <% @user.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+              <% end %>
+              </ul>
+            </div>
+          <% end %>
 
-  <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation %>
+          <%= form_for @user do |f|%>
 
-  <%= f.label :mod %>
-  <%= f.select :mod, ['1','2','3','4','5'] %>
+          <div class="form-group mb-2 mr-sm-2">
+            <% f.label :name %>
+            <%= f.text_field :name, class:"form-control", placeholder:"Name" %>
+          </div>
 
-  <%= f.submit "Sign Up!" %>
+          <div class="form-group mb-2 mr-sm-2">
+            <% f.label :username %>
+            <%= f.text_field :username, class:"form-control", placeholder:"Username" %>
+          </div>
 
-<% end %>
+          <div class="form-group mb-2 mr-sm-2">
+            <%= f.select :mod, ['Mod 1','Mod 2','Mod 3','Mod 4','Mod 5'], {include_blank: "Select your mod!"}, { :class => 'custom-select' }  %>
+          </div>
+
+          <div class="form-group mb-2 mr-sm-2">
+            <% f.label :password %>
+            <%= f.password_field :password, class:"form-control", placeholder:"Password" %>
+          </div>
+
+          <div class="form-group mb-2 mr-sm-2">
+            <% f.label :password_confirmation %>
+            <%= f.password_field :password_confirmation, class:"form-control", placeholder:"Confirm Password"%>
+          </div>
+
+          <div class="form-group mb-2 mr-sm-2">
+            <%= f.submit "Sign Up!", class:"btn btn-primary", id:"new_user_button" %>
+          </div>
+
+
+          <% end %>
+
+      </div>
+
+</div>

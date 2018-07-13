@@ -1,11 +1,17 @@
-<h1>Quizzzzz Time</h1>
+<div class="container pt-3 pb-5">
+  <h3>Find Your Perfect Match!</h3>
+  <br>
 
-<%= form_tag '/user_answers', method: :post %>
-<% Question.all.each do |question| %>
-    <h2><%= question.content %></h2>
-    <% question.answers.each do |answer| %>
-      <%= radio_button_tag "user_answers[question_#{question.id}]",  answer.id %>
-      <%= label_tag answer.id, answer.content %>
-    <% end %>
-<% end %>
-<%= submit_tag %>
+  <%= form_tag '/user_answers', method: :post %>
+  <% Question.all.each do |question| %>
+      <h5 style="color:#A4CCC0;"><%= question.content %></h5>
+      <% question.answers.each do |answer| %>
+        <%= radio_button_tag "user_answers[question_#{question.id}]",  answer.id %>
+        <%= label_tag answer.id, answer.content %><br>
+      <% end %>
+      <br>
+  <% end %>
+  <br>
+  <%= submit_tag "Get My Partners!"%>
+
+</div>
