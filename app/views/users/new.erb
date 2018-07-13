@@ -12,6 +12,9 @@
   <%= f.label :password_confirmation %>
   <%= f.password_field :password_confirmation %>
 
+  <%= f.label :mod %>
+  <%= f.select :mod, ['1','2','3','4','5'] %>
+
   <%= f.submit "Sign Up!" %>
 
 <% end %>
