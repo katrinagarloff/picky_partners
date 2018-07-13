@@ -3,6 +3,18 @@
        <h3 style="text-align:center;color: #fff; text-shadow: 1px 1px #000;">New Registration</h3>
         <br>
 
+
+
+          <% if @user.errors.any? %>
+            <div id="error_explanation">
+              <ul>
+              <% @user.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+              <% end %>
+              </ul>
+            </div>
+          <% end %>
+
           <%= form_for @user do |f|%>
 
           <div class="form-group mb-2 mr-sm-2">

@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+  validates :username, uniqueness: true, presence: true
+  validates :name, presence: true
+
   has_secure_password
   has_many :matches
   has_many :match_requests

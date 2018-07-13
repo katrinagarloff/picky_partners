@@ -1,5 +1,6 @@
-
+<% if @user.id == session[:user_id] %>
 <div class="jumbotron profile-jumbotron profile-banner">
+
 
   <h3> <%= @user.name %>'s Work Personality</h3>
   <% if @user.answers.empty? %>
@@ -23,7 +24,7 @@
               <% @potential_matches.each do |match| %>
                 <% your_match = User.find(match.user2_id)%>
                 <div class="btn btn-special">
-                <%= link_to your_match.name, potential_match_path(match.id), id: 'link-to-text-color'%>
+                <%= link_to your_match.name, redirect_user_path(match.id), id: 'link-to-text-color'%>
                 <br/>
               </div>
             <% end %>
@@ -36,7 +37,7 @@
         <% @requests.each do |request| %>
         <% your_request = User.find(request.user2_id) %>
         <div class="btn btn-special">
-        <%= link_to your_request.name, match_path(request.id), class:"btn" %>
+        <p><%= link_to your_request.name, redirect_match_path(request.id)%></p>
         </div>
         <br/>
         <% end %>
@@ -58,3 +59,8 @@
   <% end %>
 
   </div>
+<% else %>
+  <div class="container">
+      <p> You are not authorized to visit this page. </p>
+  </div>
+<% end %>
