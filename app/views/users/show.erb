@@ -32,7 +32,7 @@
       <h6>Accept requests: </h6>
         <% @requests.each do |request| %>
         <% your_request = User.find(request.user2_id) %>
-        <p><%= link_to your_request.name, match_path(request.id)%></p>
+        <p><%= link_to your_request.name, redirect_match_path(request.id)%></p>
         <br/>
         <% end %>
     </div>

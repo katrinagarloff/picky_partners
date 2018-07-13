@@ -1,8 +1,8 @@
 class MatchesController < ApplicationController
-  def show
+  def redirect
     @match_request = MatchRequest.find(params[:id])
+    @me = current_user
     @new_match = Match.new(user_id: @match_request.user2_id, user2_id: @match_request.user_id)
-
     @new_match2 = Match.new(user_id: @match_request.user_id, user2_id: @match_request.user2_id)
 
     if @new_match.valid?
@@ -19,6 +19,7 @@ class MatchesController < ApplicationController
     end
 
     @partner = User.find(@new_match.user2_id)
+    redirect_to @me
   end
 
 end
