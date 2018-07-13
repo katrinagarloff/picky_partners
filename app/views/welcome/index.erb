@@ -4,7 +4,7 @@
   <p style="text-align:center; color: #fff; text-shadow: 1px 1px #000;"> Find Your Perfect Project Partner Today!</p>
   <br/>
     <div class="container custom-bg">
-      <form style="text-align:center;">
+
         <%= form_tag sessions_path do %>
         <div class="form-group">
            <%= label_tag "Username", "Username"%>
@@ -16,9 +16,9 @@
           <%= password_field_tag :password %>
         </div>
 
-        <p><%= submit_tag "Login", class:"btn btn-primary btn-md" %></p>
+        <p><%= submit_tag "Login", class:"btn btn-primary btn-md" %> || <%= link_to "Create An Account", new_user_path %></p>
         <% end %>
-      </form>
-    <p style="text-align:center;"><%= link_to "Create An Account", new_user_path %></p>
+
+
    </div>
 </div>

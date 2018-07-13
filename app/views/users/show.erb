@@ -1,56 +1,51 @@
 
-<div class="jumbotron">
+<div class="jumbotron profile-jumbotron">
 
   <h3> <%= @user.name %>'s Work Personality</h3>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-    sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <% if @user.answers.empty? %>
+  <p> You don't have any potential project partners! Take the quiz to find out who would work best with you!</p>
+    <%= link_to "Get Your Matches!", new_user_answer_path %>
+    <br>
+    <% else %>
+      <%= @user.show_categories %>
 
 </div>
 
 <div class="container">
   <div class="row">
     <div class="col">
-      <h1> <%= @user.name %>: </h1>
-
-        <% if @user.answers.empty? %>
-          <%= link_to "Get Your Matches!", new_user_answer_path %>
-          <% else %>
-            <%= @user.show_categories %>
-
-            <h1>Accept requests: </h1>
-              <% @requests.each do |request| %>
-              <% your_request = User.find(request.user2_id) %>
-              <%= link_to your_request.name, match_path(request.id) %>
-              <br/>
-              <% end %>
-
-            <h1>Send a request: </h1>
+      <h3> Potential Project Partners </h3>
+            <h6>Send a request: </h6>
               <% @potential_matches.each do |match| %>
-              <p><% your_match = User.find(match.user2_id)%></p>
-                <%= link_to your_match.name, potential_match_path(match.id)%>
+                <% your_match = User.find(match.user2_id)%>
+                <p><%= link_to your_match.name, potential_match_path(match.id)%></p>
                 <br/>
             <% end %>
 
-          <h1>Matches made: </h1>
-            <% @matches.each do |match| %>
-            <% your_match = User.find(match.user2_id) %>
-            <%= your_match.name %>
-            <br/>
-            <% end %>
 
-          <h3>Want to try again?</h3>
-          <%= link_to "Find New Partners!", new_user_answer_path %>
-        <% end %>
     </div>
     <div class="col">
-      2 of 2
+      <h3>Your Partner Requests</h3>
+      <h6>Accept requests: </h6>
+        <% @requests.each do |request| %>
+        <% your_request = User.find(request.user2_id) %>
+        <p><%= link_to your_request.name, match_path(request.id)%></p>
+        <br/>
+        <% end %>
     </div>
   </div>
+</div>
+<br>
+  <div class="jumbotron profile-jumbotron">
 
-  <div class="jumbotron">
+    <h3>Your Official Partners </h3>
+      <% @matches.each do |match| %>
+      <% your_match = User.find(match.user2_id) %>
+      <p><%= your_match.name %></p>
+      <% end %>
 
-    <h3>Your Partners</h3>
+    <h5>Want to try again?</h5>
+    <%= link_to "Find New Partners!", new_user_answer_path %>
+  <% end %>
 
   </div>
