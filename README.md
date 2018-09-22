@@ -15,11 +15,15 @@ bundle install
 rake db:migrate 
 rails s 
 
+## Contributors 
+Montez Smith 
+Katrina Garloff 
+
 
 
 MIT License
 
-Copyright (c) 2018 Katrina Garloff
+Copyright (c) 2018 Katrina Garloff, Montez Smith
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
