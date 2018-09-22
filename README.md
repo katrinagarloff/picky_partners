@@ -1,4 +1,4 @@
-![site demo](https://thumbs.gfycat.com/ImmenseTalkativeGoat-size_restricted.gif)
+![site demo](/public/picky-partners-demo.gif)
 
 # Picky Partners
 A match-up app to find your perfect project partner. Take a quiz to get suggestions of other users who would work well with you. Send and recieve partnering requests.   
